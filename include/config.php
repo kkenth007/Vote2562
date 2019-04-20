@@ -2,7 +2,7 @@
 $server = 'localhost';
 $username = 'root';
 $password = '';
-$dbname = 'vote_web_62';
+$dbname = 'elect_db';
 
 $con = mysqli_connect($server,$username,$password,$dbname);
 mysqli_set_charset($con,"UTF8");

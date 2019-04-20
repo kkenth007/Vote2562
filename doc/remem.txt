@@ -20,3 +20,23 @@ some javascript
                         });
                 }
             </script> -->
+
+
+            จังหวัดเลย มีประชากรเลือกตั้งได้ปีนั้ 502,476 
+
+            SELECT point AS "คะเเนนรวม" FROM `score` WHERE ID_Candidate =3;
+            SELECT SUM(point) AS "คะเเนนรวม" FROM `score` WHERE ID_Candidate =3
+
+            SELECT SUM(point) AS "คะเเนนรวม",ID_Candidate,ID FROM `score` WHERE ID_Candidate =3
+
+
+
+            //SQL 
+        UPDATE `user` SET `Status_scored` = '1' WHERE `user`.`IDCard` = '1429900326673';
+        INSERT INTO score (ID,ID_Candidate,point) VALUES ('1', '3', '589');
+        INSERT INTO score (ID) VALUES ('1');
+
+
+        SELECT COUNT(ID) FROM score WHERE ID_Candidate=3;
+
+
