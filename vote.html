@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Bootstrap Example</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <style>
+        th {
+            padding: 15px;
+        }
+    </style>
+            <!-- <script>
+                function confir(){
+                        $("input[type='button']").click(function () {
+                            var radioValue = $("input[name='radio']:checked").val();
+                            var choose = confirm("คุณต้องการเลือก " + radioValue);
+                            if (choose) {
+                                alert(radioValue);
+                            }else{
+                                alert("NO");
+                            }
+                        });
+                }
+            </script> -->
+</head>
+
+<body>
+        
+
+    <div class="jumbotron text-center">
+        <h1>My First Bootstrap Page</h1>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                <ul class="list-group">
+                    <li class="list-group-item active">เมนู</li>
+                    <li class="list-group-item">ออกจากระบบ</li>
+                    <!-- <li class="list-group-item">Third item</li> -->
+                </ul>
+            </div>
+            <div class="col-sm-8">
+                <h4>เลือกตั้ง จังหวัด <strong>เลย</strong> เขต <strong>1</strong></h4>
+                <!-- <form action="goto.html" method="post" onsubmit="return confir()"> -->
+                    <table class="table table-bordered table-sm">
+                        <thead>
+                            <tr>
+                                <th width="10px;">หมายเลข</th>
+                                <th width="90px;">โลโก้พรรค</th>
+                                <th>ชื่อพรรค</th>
+                                <th width="220px;">ชื่อผู้สมัคร</th>
+                                <th>ลงคะเเนน</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="text-center">1</td>
+                                <td><img width="80px;"
+                                        src="http://logo-th.com/wp-content/uploads/2018/12/%E0%B8%9E%E0%B8%A3%E0%B8%A3%E0%B8%84%E0%B8%9B%E0%B8%A3%E0%B8%B0%E0%B8%8A%E0%B8%B2%E0%B8%A3%E0%B8%B1%E0%B8%90.jpg"
+                                        alt=""></td>
+                                <td>พรรคพลังประชารัฐ</td>
+                                <td>นาย วันชัย บุษบา</td>
+                                <td>
+                                    <input type="radio" name="radio" value="พรรคพลังประชารัฐ" id="">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">2</td>
+                                <td><img src="https://i.imgur.com/132kHmF.png"
+                                        width="80px;" alt=""></td>
+                                <td>พรรคเพื่อไทย</td>
+                                <td>นาย เลิศศักดิ์ พัฒนชัยกุล</td>
+                                <td>
+                                    <input type="radio" name="radio" value="พรรคเพื่อไทย" id="">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="text-center">3</td>
+                                <td><img src="http://logo-th.com/wp-content/uploads/2018/12/%E0%B8%9E%E0%B8%A3%E0%B8%A3%E0%B8%84%E0%B8%AD%E0%B8%99%E0%B8%B2%E0%B8%84%E0%B8%95%E0%B9%83%E0%B8%AB%E0%B8%A1%E0%B9%88.jpg"
+                                        width="80px;" alt=""></td>
+                                <td>พรรคอนาคตใหม่</td>
+                                <td>นาย ไมตรี วาที</td>
+                                <td>
+                                    <input type="radio" name="radio" value="พรรคอนาคตใหม่"  id="">
+                                </td>
+                            </tr>
+                            <tr>
+                                <td class="bg-warning" colspan="5" style="padding: 15px;">
+                                    ไม่ประสงค์ลงคะเเนน <input type="radio" name="radio" value="ไม่ประสงค์ลงคะเเนน" id="">
+                                </td>
+                            </tr>
+                        </tbody>
+
+                    </table>
+                    <button class="btn btn-success" data-toggle="modal" data-target="#ConfirmSave"
+                       >บันทึกข้อมูล</button>
+                       <!-- <input type="button" class="btn btn-success" onclick="confir();" value="Save"> -->
+                       <!-- <p><input type="button" value="Get Value"></p> -->
+                    <!-- Modal -->
+                    <div class="modal fade" id="ConfirmSave" tabindex="-1" role="dialog"
+                    aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">ยืนยันการเลือกผู้สมัคร</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <div class="modal-body">
+                               คุณต้องการที่จะเลือกพรรค .......... หรือไม่
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-success">ยืนยัน</button>
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">ยกเลิก</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- </form> -->
+                <br><br><br>
+            </div>
+        </div>
+
+</body>
+
+</html>

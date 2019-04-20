@@ -1,0 +1,4 @@
+Truncate table automatically
+reset the Autoincrement values to 0.
+TRUNCATE TABLE city;
+___________________________________________________________________
