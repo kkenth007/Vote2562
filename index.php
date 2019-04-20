@@ -3,8 +3,8 @@ session_start();
 
 include "./include/config.php";
 
-    $data = "SELECT * FROM table_applicant";
-    $result = mysqli_query($con,$data);
+    // $data = "SELECT * FROM table_applicant";
+    // $result = mysqli_query($con,$data);
 
 ?>
 <!DOCTYPE html>
