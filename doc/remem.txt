@@ -2,3 +2,21 @@ Truncate table automatically
 reset the Autoincrement values to 0.
 TRUNCATE TABLE city;
 ___________________________________________________________________
+
+DELETE FROM table_applicant WHERE candidate_id = '2LEI1';
+
+___________________________________________________________________
+some javascript 
+            <!-- <script>
+                function confir(){
+                        $("input[type='button']").click(function () {
+                            var radioValue = $("input[name='radio']:checked").val();
+                            var choose = confirm("คุณต้องการเลือก " + radioValue);
+                            if (choose) {
+                                alert(radioValue);
+                            }else{
+                                alert("NO");
+                            }
+                        });
+                }
+            </script> -->

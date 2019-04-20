@@ -1,3 +1,12 @@
+<?php
+session_start();
+
+include "./include/config.php";
+
+    $data = "SELECT * FROM table_applicant";
+    $result = mysqli_query($con,$data);
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -46,40 +55,18 @@
                             </tr>
                         </thead>
                         <tbody>
+                            <?php while($row = mysqli_fetch_assoc($result)){ ?>
                             <tr>
-                                <td class="text-center">1</td>
-                                <td><img width="80px;"
-                                        src="./logo/pracharat.jpg"
-                                        alt=""></td>
-                                <td>พรรคพลังประชารัฐ</td>
-                                <td><img src="./pic/1LEI1.jpg" width="80px;"></td>
-                                <td>นาย วันชัย บุษบา</td>
+                                <td class="text-center"><?php echo $row['candidate_number']; ?></td>
+                                <td><img width="80px;" src="<?php echo $row['logo']; ?>" alt=""></td>
+                                <td><?php echo $row['party_name']; ?></td>
+                                <td><img src="<?php echo $row['candidate_picture']; ?>" width="80px;"></td>
+                                <td><?php echo $row['candidate_name']; ?></td>
                                 <td>
-                                    <input type="radio" name="radio" value="1LEI1" id="">
+                                    <input type="radio" name="radio" value="<?php echo $row['candidate_id']; ?>" id="">
                                 </td>
                             </tr>
-                            <tr>
-                                <td class="text-center">2</td>
-                                <td><img src="./logo/pakpeathai.png"
-                                        width="80px;" alt=""></td>
-                                <td>พรรคเพื่อไทย</td>
-                                <td><img src="./pic/2LEI1.jpg" width="80px;"></td>
-                                <td>นาย เลิศศักดิ์ พัฒนชัยกุล</td>
-                                <td>
-                                    <input type="radio" name="radio" value="2LEI1" id="">
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="text-center">3</td>
-                                <td><img src="./logo/newfeature.jpg"
-                                        width="80px;" alt=""></td>
-                                <td>พรรคอนาคตใหม่</td>
-                                <td><img src="./pic/3LEI1.jpg" width="80px;"></td>
-                                <td>นาย ไมตรี วาที</td>
-                                <td>
-                                    <input type="radio" name="radio" value="3LEI1"  id="">
-                                </td>
-                            </tr>
+                            <?php } ?>
                             <tr>
                                 <td class="bg-warning" colspan="6" style="padding: 15px;">
                                     ไม่ประสงค์ลงคะเเนน <input type="radio" name="radio" value="ไม่ประสงค์ลงคะเเนน" id="" checked> 
