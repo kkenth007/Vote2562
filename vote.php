@@ -6,6 +6,7 @@ include "./include/config.php";
     // $data = "SELECT * FROM applicant";
     $data = "SELECT * FROM applicant INNER JOIN area ON applicant.ID = area.ID";
     $result = mysqli_query($con,$data);
+    // print_r($result);
 
     $ID=1;
     $areaname = "SELECT * FROM area WHERE ID=$ID";
@@ -78,6 +79,7 @@ include "./include/config.php";
                     <div class="modal fade" id="ConfirmSave" tabindex="-1" role="dialog"
                     aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
+                        <form action="fetch.php" method="post">
                         <div class="modal-content">
                             <div class="modal-header">
                                 <h5 class="modal-title" id="exampleModalLabel">ยืนยันการเลือกผู้สมัคร</h5>
@@ -87,9 +89,11 @@ include "./include/config.php";
                             </div>
                             <div class="modal-body">
                                คุณต้องการที่จะเลือก <strong id="span_name" ></strong> หรือไม่
+                               <input type="hidden" name="check" id="checkX">
                             </div>
                             <div class="modal-footer">
-                                <button type="button" class="btn btn-success" id="confirm_OK">ยืนยัน</button>
+                                <button type="submit" class="btn btn-success" id="confirm_OK">ยืนยัน</button>
+                            </form>
                                 <button type="button" class="btn btn-danger" data-dismiss="modal">ยกเลิก</button>
                             </div>
                         </div>
@@ -109,6 +113,8 @@ include "./include/config.php";
                  $(document).on('click', '#datasave', function(){  
                     //   var employee_id = $(this).attr("id"); 
                       var choose_id = $("input[name='radio']:checked").val(); 
+
+                      document.getElementById("checkX").value = choose_id;
                     //   alert(choose_id);
                       $.ajax({  
                            url:"fetch.php",  
