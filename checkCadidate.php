@@ -26,12 +26,11 @@ include "./include/config.php";
         <div class="row">
             <div class="col-sm-3">
                 <ul class="list-group">
-                    <li class="list-group-item active">เมนู</li>
-                    <li class="list-group-item"><a href="#">ตรวจสอบสิทธิ์การเลือกตั้ง</a></li>
-                    <li class="list-group-item"><a href="#">ตรวจพรรคการเมือง</a></li>
-                    <li class="list-group-item"><a href="Logina.php">เข้าสู่ระบบ</a></li>
+                <li class="list-group-item active">เมนู</li>
+                    <li class="list-group-item"><a href="checkUser.php">ตรวจสอบสิทธิ์การเลือกตั้ง</a></li>
+                    <li class="list-group-item"><a href="checkCadidate.php">ตรวจพรรคการเมือง</a></li>
+                    <li class="list-group-item"><a href="Login.php">เข้าสู่ระบบ</a></li>
                     <li class="list-group-item"><a href="#">ผลการเลือกตั้ง</a></li>
-                    <li class="list-group-item"><a href="vote.php">ทดสอบดูหน้า เลือกตั้ง</a></li>
 
                 </ul>
             </div>

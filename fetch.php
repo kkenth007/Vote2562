@@ -13,31 +13,31 @@ if(isset($_POST["choose_id"]))
 
 if(isset($_POST["check"]))  
 {
-    echo $_POST["check"];
-    //เปิด SESSION 
-    // $IDCard = SESSION_
-    // $area = SESSION_['ID'];   
+    // echo $_POST["check"];
+    // เปิด SESSION 
+    $IDCard = $_SESSION['IDCard'];
+    $area = $_SESSION['ID']; 
 
-    // if(is_numeric($_POST["check"])){
-    //     //ลงคะแนนตามปกติ
-    //     $id = $_POST["check"];
-    //     $sql = "INSERT INTO score (ID,ID_Candidate) VALUES ('$area', '$id')";
-    //     $update = "UPDATE user SET Status_scored = '1' WHERE user.IDCard = '$IDCard'";
-    //     mysqli_query($con,$sql);
-    //     mysqli_query($con,$update);
-    //     mysqli_close($con);
-    //     // header("Location:logout.php");
+    if(is_numeric($_POST["check"])){
+        //ลงคะแนนตามปกติ
+        $id = $_POST["check"];
+        $sql = "INSERT INTO score (ID,ID_Candidate) VALUES ('$area', '$id')";
+        $update = "UPDATE user SET Status_scored = '1' WHERE user.IDCard = '$IDCard'";
+        mysqli_query($con,$sql);
+        mysqli_query($con,$update);
+        mysqli_close($con);
+        header("Location:logout.php");
 
-    // }else{
-    //     //กรณีไม่ประสงค์ลงคะเเนน
-    //     $area="";// $area = SESSION_['ID'];
-    //     $sql = "INSERT INTO score (ID) VALUES ('$area')";
-    //     mysqli_query($con,$sql);
-    //     $update = "UPDATE user SET Status_scored = '1' WHERE user.IDCard = '$IDCard'";
-    //     mysqli_query($con,$update);
-    //     mysqli_close($con);
-        // header("Location:logout.php");
-    // }
+    }else{
+        //กรณีไม่ประสงค์ลงคะเเนน
+        //$area="";// $area = SESSION_['ID'];
+        $sql = "INSERT INTO score (ID) VALUES ('$area')";
+        mysqli_query($con,$sql);
+        $update = "UPDATE user SET Status_scored = '1' WHERE user.IDCard = '$IDCard'";
+        mysqli_query($con,$update);
+        mysqli_close($con);
+        header("Location:logout.php");
+    }
 } 
 
 ?>

@@ -8,7 +8,7 @@ echo $login_password = mysqli_real_escape_string($con,$_POST['password']);
 
 //ถ้า id เเละ รหัสผ่านที่กรอกมา ตัวอักษรไม่เท่ากับ 13ตัว and 6ตัวให้ กลับไปล็อกอินใหม่
 if(strlen($login_password) != 6 or strlen($login_username) != 13){
-  header("Location:Logina.php");
+  header("Location:Login.php");
 }
 
       $sql = "SELECT * FROM user WHERE IDCard='$login_username' && Password='$login_password'";
