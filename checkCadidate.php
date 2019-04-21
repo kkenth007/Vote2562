@@ -35,7 +35,8 @@ include "./include/config.php";
                 </ul>
             </div>
             <div class="col-sm-8">
-                <h3>เขต 1</h3>
+              <h3>เลือกตั้ง จังหวัด เลย</h3>
+                <h4>เขต 1</h4>
         <div class="card-deck">
   <div class="card">
     <img src="https://avatars0.githubusercontent.com/u/32562129 " class="img-fluid" alt="...">
@@ -68,7 +69,8 @@ include "./include/config.php";
     </div>
   </div>
 </div>
-<h3>เขต 2</h3>
+<br>
+<h4>เขต 2</h4>
 <div class="card-deck">
 <div class="card">
 <img src="https://avatars0.githubusercontent.com/u/32562129 " class="img-fluid" alt="...">
@@ -101,7 +103,8 @@ include "./include/config.php";
 </div>
 </div>
 </div>
-<h3>เขต 3</h3>
+<br>
+<h4>เขต 3</h4>
 <div class="card-deck">
 <div class="card">
 <img src="https://avatars0.githubusercontent.com/u/32562129 " class="img-fluid" alt="...">
