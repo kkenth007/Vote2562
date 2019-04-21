@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 20, 2019 at 07:57 PM
+-- Generation Time: Apr 21, 2019 at 12:01 PM
 -- Server version: 10.1.37-MariaDB
 -- PHP Version: 7.3.0
 
@@ -79,20 +79,19 @@ INSERT INTO `area` (`ID`, `areaname`, `province`, `provincial_abbreviation`) VAL
 CREATE TABLE `score` (
   `_id` int(11) NOT NULL,
   `ID` int(11) DEFAULT NULL,
-  `ID_Candidate` int(11) DEFAULT NULL,
-  `point` int(4) NOT NULL
+  `ID_Candidate` int(11) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_thai_520_w2;
 
 --
 -- Dumping data for table `score`
 --
 
-INSERT INTO `score` (`_id`, `ID`, `ID_Candidate`, `point`) VALUES
-(1, 1, 3, 120),
-(2, 1, 3, 350),
-(3, 1, 1, 12),
-(4, 1, 3, 589),
-(5, 1, 2, 589);
+INSERT INTO `score` (`_id`, `ID`, `ID_Candidate`) VALUES
+(1, 1, 3),
+(2, 1, 3),
+(3, 1, 1),
+(4, 1, 3),
+(5, 1, 2);
 
 -- --------------------------------------------------------
 
@@ -115,7 +114,8 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`Fullname`, `IDCard`, `Register`, `Password`, `Status`, `ID`, `Status_scored`) VALUES
-('คณิต วิจิตรปัญญา', '1429900326673', '56465313', 326673, '1', 1, 0);
+('ตง', '1429900317666', '56265165', 317666, '1', 1, 0),
+('คณิต วิจิตรปัญญา', '1429900326673', '56465313', 326673, '1', 1, 1);
 
 --
 -- Indexes for dumped tables
