@@ -13,6 +13,17 @@ include "./include/config.php";
     $fethName = mysqli_query($con,$areaname);
     $all = mysqli_fetch_array($fethName);
     // print_r($all);
+    echo $_SESSION['IDCard']."<br/>";
+    echo $_SESSION['Fullname']."<br/>";
+    echo $_SESSION['Register']."<br/>";
+    echo $_SESSION['Password']."<br/>";
+    echo $_SESSION['ID']."<br/>";
+    echo $_SESSION['status']."<br/>";
+    echo "Status_SCORE => ".$_SESSION['Status_scored'];
+
+    if($_SESSION['Status_scored'] == '1'){
+      header("Location:logout.php");
+    }
 
 ?>
 <!DOCTYPE html>

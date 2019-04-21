@@ -1,73 +1,60 @@
+<?php
+session_start();
+
+include "./include/config.php";
+
+?>
 <!DOCTYPE html>
-<html lang="en" dir="ltr">
-  <head>
-    <meta charset="utf-8">
-    <title></title>
-    <link rel="stylesheet" href="./include/style.css">
-  </head>
-  <body>
-    <center>
-    <div>
-      <form class="" action="main.php" method="post">
+<html lang="en">
 
-        <div class="limiter">
-        		<div class="container-login100">
-        			<div class="wrap-login100">
-        				<form class="login100-form validate-form">
-        					<span class="login100-form-title p-b-26"><br>
-                    ยืนยันตัวตน
-        					</span>
-        					<span class="login100-form-title p-b-48">
-        						<i class="zmdi zmdi-font"></i><br>
-        					</span><br>
+<head>
+    <title>Bootstrap Example</title>
+    <?php include "./include/header.php"; ?>
+</head>
 
-        					<div class="wrap-input100 validate-input" data-validate="Valid email is: a@b.c">
-        						<input class="input100" type="text" name="Identification_Number" required autofocus>
-        						<span class="focus-input100" data-placeholder="เลขบัตรประชาชน"></span>
-        					</div><br>
-                    
-        					<div class="wrap-input100 validate-input" data-validate="Enter password">
-        						<span class="btn-show-pass">
-        							<i class="zmdi zmdi-eye"><br></i>
-        						</span>
-        						<input class="input100" type="text" name="" required>
-        						<span class="focus-input100" data-placeholder="รหัสผ่าน(เลข 6 หลักหลังเลข 13 หลัก)"></span>
-        					</div><br><br>
+<body>
 
-        					<div class="container-login100-form-btn">
-        						<div class="wrap-login100-form-btn">
-        							<div class="login100-form-bgbtn"></div>
-        							<button class="login100-form-btn">
-        								Login
-        							</button>
-        						</div>
-        					</div> <br><br><br>
 
-        					<div class="text-center p-t-115">
-        						<span class="txt1">
-
-        						</span>
-
-        						<a class="txt2" href="#">
-        							ติดต่อเจ้าหน้าที่
-        						</a>
-        					</div>
-        				</form>
-        			</div>
-        		</div>
-        	</div>
-      </form>
-      <!-- <form action="main.php" method="POST">
-          <label for="Identification_Number">ID     :</label>
-          <input type="text" name="เลขบัตรประชาชน" required autofocus><br><br>
-          <label for="password">Password: </label>
-          <input type="password" name="เลข 6 หลักหลังเลข 13 หลัก" required>
-          <br><br>
-          <input type="submit"  value="login">
-  <script src="vendor/jquery/jquery-3.2.1.min.js"></script>
-
-      </form> -->
+    <div class="jumbotron text-center">
+        <h1>เลือกตั้ง 62 เด้อ <i class="fas fa-vote-yea"></i> </h1>
     </div>
-  </center>
-  </body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-sm-3">
+                <ul class="list-group">
+                    <li class="list-group-item active">เมนู</li>
+                    <li class="list-group-item"><a href="logout.php">หน้าหลัก</a></li>
+                    <!-- <li class="list-group-item"><a href="vote.php">ทดสอบดูหน้า เลือกตั้ง</a></li> -->
+                    <!-- <li class="list-group-item"><a href="#">ตรวจสอบสิทธิ์การเลือกตั้ง</a></li>
+                    <li class="list-group-item"><a href="#">ตรวจพรรคการเมือง</a></li>
+                    <li class="list-group-item"><a href="#">ผลการเลือกตั้ง</a></li> -->
+                </ul>
+            </div>
+            <div class="col-sm-8">
+                <div class="col-sm-6 mr-auto">
+                    <form action="checklogin.php" method="post">
+                        <h4 class="text-center">เข้าสู่ระบบ </h4>
+                        <div class="form-group">
+                            <label for="exampleInputEmail1">เลขบัตรประชาชน</label>
+                            <input type="text" class="form-control" id="exampleInputEmail1" name='id_card' placeholder="เลขบัตรประชาชน" aria-describedby="emailHelp" placeholder="Enter email">
+                        </div>
+                        <div class="form-group">
+                            <label for="exampleInputPassword1">รหัสผ่าน</label>
+                            <span class="mt-3">
+                                <a href="#" data-toggle="tooltip" title="รหัสผ่าน (เลข 6 หลักหลังเลข 13 หลัก)"><i class="far fa-question-circle"></i></a>
+                            </span>
+                            <input type="password" class="form-control" name='password' id="exampleInputPassword1" placeholder="Password">
+                        </div>
+                        <button type="submit" class="btn btn-primary">เข้าสู่ระบบ</button>
+                    </form>
+                </div>
+            </div>
+            <script>
+                $(document).ready(function() {
+                    $('[data-toggle="tooltip"]').tooltip();
+                });
+            </script>
+</body>
+
 </html>
