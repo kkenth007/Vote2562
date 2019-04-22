@@ -8,11 +8,10 @@ include "./include/config.php";
     $result = mysqli_query($con,$data);
     // print_r($result);
 
-
     $areaname = "SELECT * FROM area WHERE ID=$ID";
     $fethName = mysqli_query($con,$areaname);
     $all = mysqli_fetch_array($fethName);
-    // print_r($all);
+    
     // echo $_SESSION['IDCard']."<br/>";
     // echo $_SESSION['Fullname']."<br/>";
     // echo $_SESSION['Register']."<br/>";
@@ -117,12 +116,8 @@ include "./include/config.php";
 
         <script>  
             $(document).ready(function(){  
-                 $('#add').click(function(){  
-                      $('#insert').val("Insert");  
-                      $('#insert_form')[0].reset();  
-                 });  
                  $(document).on('click', '#datasave', function(){  
-                    //   var employee_id = $(this).attr("id"); 
+                    //   var choosee_id = $(this).attr("id"); 
                       var choose_id = $("input[name='radio']:checked").val(); 
 
                       document.getElementById("checkX").value = choose_id;
