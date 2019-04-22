@@ -1,14 +1,14 @@
 <?php
 session_start();
-
+$ID=$_SESSION['ID'];
 include "./include/config.php";
 
     // $data = "SELECT * FROM applicant";
-    $data = "SELECT * FROM applicant INNER JOIN area ON applicant.ID = area.ID";
+    $data = "SELECT * FROM applicant INNER JOIN area ON applicant.ID = area.ID WHERE area.ID=$ID";
     $result = mysqli_query($con,$data);
     // print_r($result);
 
-    $ID=1;
+
     $areaname = "SELECT * FROM area WHERE ID=$ID";
     $fethName = mysqli_query($con,$areaname);
     $all = mysqli_fetch_array($fethName);
