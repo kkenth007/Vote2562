@@ -7,6 +7,59 @@ $areaname = "SELECT * FROM score";
 $fethName = mysqli_query($con, $areaname);
 $all = mysqli_fetch_array($fethName);
 
+// $N = "SELECT COUNT(ID) AS allrows FROM score WHERE ID_Candidate IS NOT NULL";
+// $N = mysqli_query($con,$N);
+// $N = mysqli_fetch_array($N);
+// $N = $N['allrows'];
+// echo $N;
+// echo "<br/>";
+// $people = "SELECT COUNT(ID) FROM score WHERE ID_Candidate=3";
+
+// นับคะเเนนของแต่ล่ะคนในเขต 1
+$i = 1;
+while(true){
+  $people[$i] = "SELECT COUNT(ID) AS point FROM score WHERE ID_Candidate=$i";
+  $people[$i] = mysqli_query($con,$people[$i]);
+  $people[$i] = mysqli_fetch_array($people[$i]);
+  $people[$i] = $people[$i]['point'];
+  // echo $people[$i];
+
+  if($i >= 5){
+    break;
+  }
+  $i++;
+}
+
+// นับคะแนนของแต่ล่ะคนเขต 2
+$i = 6;
+while(true){
+  $people[$i] = "SELECT COUNT(ID) AS point FROM score WHERE ID_Candidate=$i";
+  $people[$i] = mysqli_query($con,$people[$i]);
+  $people[$i] = mysqli_fetch_array($people[$i]);
+  $people[$i] = $people[$i]['point'];
+  // echo $people[$i];
+
+  if($i >= 10){
+    break;
+  }
+  $i++;
+}
+
+// นับคะแนนของแต่ล่ะคนเขต 3
+$i = 11;
+while(true){
+  $people[$i] = "SELECT COUNT(ID) AS point FROM score WHERE ID_Candidate=$i";
+  $people[$i] = mysqli_query($con,$people[$i]);
+  $people[$i] = mysqli_fetch_array($people[$i]);
+  $people[$i] = $people[$i]['point'];
+
+  // echo "key => $i = ".$people[$i];
+
+  if($i >= 14){
+    break;
+  }
+  $i++;
+}
 
 //สสเขต1
 $applicant = "SELECT * FROM score";
@@ -182,18 +235,17 @@ $pointallsum = mysqli_num_rows($pointallsum);
 
               </tr>
 
-              <?php while ($row = mysqli_fetch_array($getarea1)) { ?>
+              <?php $count = 1; while ($row = mysqli_fetch_array($getarea1)) { ?>
                 <tr>
                   <td class="text-center"><?php echo $row['Number_applicant']; ?></td>
                   <td><img width="80px;" src="<?php echo $row['Logo_applicant']; ?>" alt=""></td>
                   <td><?php echo $row['Name_applicant']; ?></td>
                   <td><img src="<?php echo $row['Logo_Candidate']; ?>" width="80px;"></td>
                   <td><?php echo $row['Candidate_name']; ?></td>
-                  <td>
-                  </td>
+                  <td><?php echo $people[$count];?></td>
                 </tr>
 
-              <?php } ?>
+              <?php $count++; } ?>
               <tr >
                 <td class="bg-warning" style="padding:15px;" colspan="5">รวมคะแนนเขต 1</td>
                 <td class="bg-warning" style="padding:15px;"><?php echo $allPointone; ?></td>
@@ -214,18 +266,17 @@ $pointallsum = mysqli_num_rows($pointallsum);
 
                 </tr>
 
-                <?php while ($row = mysqli_fetch_array($getarea2)) { ?>
+                <?php  $count = 6; while ($row = mysqli_fetch_array($getarea2)) { ?>
                   <tr>
                     <td class="text-center"><?php echo $row['Number_applicant']; ?></td>
                     <td><img width="80px;" src="<?php echo $row['Logo_applicant']; ?>" alt=""></td>
                     <td><?php echo $row['Name_applicant']; ?></td>
                     <td><img src="<?php echo $row['Logo_Candidate']; ?>" width="80px;"></td>
                     <td><?php echo $row['Candidate_name']; ?></td>
-                    <td>
-                    </td>
+                    <td><?php echo $people[$count];?></td>
                   </tr>
 
-                <?php } ?>
+                <?php $count++; } ?>
                 <tr>
                   <td class="bg-warning" style="padding:15px;" colspan="5">รวมคะแนนเขต 2</td>
                   <td class="bg-warning" style="padding:15px;" ><?php echo $allPoint2; ?></td>
@@ -244,18 +295,17 @@ $pointallsum = mysqli_num_rows($pointallsum);
 
                 </tr>
 
-                <?php while ($row = mysqli_fetch_array($getarea3)) { ?>
+                <?php $count = 11;  while ($row = mysqli_fetch_array($getarea3)) { ?>
                   <tr>
                     <td class="text-center"><?php echo $row['Number_applicant']; ?></td>
                     <td><img width="80px;" src="<?php echo $row['Logo_applicant']; ?>" alt=""></td>
                     <td><?php echo $row['Name_applicant']; ?></td>
                     <td><img src="<?php echo $row['Logo_Candidate']; ?>" width="80px;"></td>
                     <td><?php echo $row['Candidate_name']; ?></td>
-                    <td>
-                    </td>
+                    <td><?php echo $people[$count];?></td>
                   </tr>
 
-                <?php } ?>
+                <?php $count++; } ?>
                 <tr>
                   <td class="bg-warning" style="padding:16px;" colspan="5">รวมคะแนนเขต 3</td>
                   <td class="bg-warning" style="padding:15px;"><?php echo $allPoint3; ?></td>
