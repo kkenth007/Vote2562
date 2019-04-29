@@ -18,7 +18,7 @@ $all = mysqli_fetch_array($fethName);
 // นับคะเเนนของแต่ล่ะคนในเขต 1
 $i = 1;
 while(true){
-  $people[$i] = "SELECT COUNT(ID) AS point FROM score WHERE ID_Candidate=$i";
+  $people[$i] = "SELECT COUNT(AREA_ID) AS point FROM score WHERE ID_Candidate=$i";
   $people[$i] = mysqli_query($con,$people[$i]);
   $people[$i] = mysqli_fetch_array($people[$i]);
   $people[$i] = $people[$i]['point'];
@@ -33,7 +33,7 @@ while(true){
 // นับคะแนนของแต่ล่ะคนเขต 2
 $i = 6;
 while(true){
-  $people[$i] = "SELECT COUNT(ID) AS point FROM score WHERE ID_Candidate=$i";
+  $people[$i] = "SELECT COUNT(AREA_ID) AS point FROM score WHERE ID_Candidate=$i";
   $people[$i] = mysqli_query($con,$people[$i]);
   $people[$i] = mysqli_fetch_array($people[$i]);
   $people[$i] = $people[$i]['point'];
@@ -48,7 +48,7 @@ while(true){
 // นับคะแนนของแต่ล่ะคนเขต 3
 $i = 11;
 while(true){
-  $people[$i] = "SELECT COUNT(ID) AS point FROM score WHERE ID_Candidate=$i";
+  $people[$i] = "SELECT COUNT(AREA_ID) AS point FROM score WHERE ID_Candidate=$i";
   $people[$i] = mysqli_query($con,$people[$i]);
   $people[$i] = mysqli_fetch_array($people[$i]);
   $people[$i] = $people[$i]['point'];
@@ -65,28 +65,28 @@ while(true){
 $applicant = "SELECT * FROM score";
 $score = mysqli_query($con, $applicant);
 $K1 = mysqli_fetch_array($score);
-$sql = "SELECT * FROM applicant  WHERE ID = 1";
+$sql = "SELECT * FROM applicant  WHERE AREA_ID = 1";
 $getarea1 = mysqli_query($con, $sql);
 
 $K2 = mysqli_fetch_array($score);
-$sql = "SELECT * FROM applicant  WHERE ID = 2";
+$sql = "SELECT * FROM applicant  WHERE AREA_ID = 2";
 $getarea2 = mysqli_query($con, $sql);
 
 $K3 = mysqli_fetch_array($score);
-$sql = "SELECT * FROM applicant  WHERE ID = 3";
+$sql = "SELECT * FROM applicant  WHERE AREA_ID = 3";
 $getarea3 = mysqli_query($con, $sql);
 
-$area1allow = "SELECT Status FROM user WHERE ID=1 AND Status=1;";
+$area1allow = "SELECT Status FROM user WHERE AREA_ID=1 AND Status=1;";
 // ผู้มีสิทธิ เขตที่1
 $area1allow = mysqli_query($con, $area1allow);
 $numarea1 = mysqli_num_rows($area1allow);
 // print_r($numarea1);
-$area1allow2 = "SELECT Status FROM user WHERE ID=2 AND Status=1;";
+$area1allow2 = "SELECT Status FROM user WHERE AREA_ID=2 AND Status=1;";
 // ผู้มีสิทธิ เขตที่2
 $area1allow2 = mysqli_query($con, $area1allow2);
 $numarea2 = mysqli_num_rows($area1allow2);
 
-$area1allow3 = "SELECT Status FROM user WHERE ID=3 AND Status=1;";
+$area1allow3 = "SELECT Status FROM user WHERE AREA_ID=3 AND Status=1;";
 // ผู้มีสิทธิ เขตที่3
 $area1allow3 = mysqli_query($con, $area1allow3);
 $numarea3 = mysqli_num_rows($area1allow3);
@@ -96,49 +96,49 @@ $all = "SELECT Status FROM user WHERE Status=1";
 $allsum = mysqli_query($con, $all);
 $allsumrow = mysqli_num_rows($allsum);
 
-$comevote1 = "SELECT ID FROM score WHERE ID=1";
+$comevote1 = "SELECT AREA_ID FROM score WHERE AREA_ID=1";
 $comevote1 = mysqli_query($con, $comevote1);
 $comevote1 = mysqli_num_rows($comevote1);
 
-$comevote2 = "SELECT ID FROM score WHERE ID=2";
+$comevote2 = "SELECT AREA_ID FROM score WHERE AREA_ID=2";
 $comevote2 = mysqli_query($con, $comevote2);
 $comevote2 = mysqli_num_rows($comevote2);
 
-$comevote3 = "SELECT ID FROM score WHERE ID=3";
+$comevote3 = "SELECT AREA_ID FROM score WHERE AREA_ID=3";
 $comevote3 = mysqli_query($con, $comevote3);
 $comevote3 = mysqli_num_rows($comevote3);
 
-$comeall = "SELECT ID FROM score";
+$comeall = "SELECT AREA_ID FROM score";
 $comeall = mysqli_query($con, $comeall);
 $comeall = mysqli_num_rows($comeall);
 
 // ไม่ประสงค์ลงคะเเนน
-$notara1 = "SELECT ID FROM score WHERE ID= 1 AND ID_Candidate IS NULL";
+$notara1 = "SELECT AREA_ID FROM score WHERE AREA_ID= 1 AND ID_Candidate IS NULL";
 $notara1 = mysqli_query($con, $notara1);
 $notara1 = mysqli_num_rows($notara1);
 
-$notara2 = "SELECT ID FROM score WHERE ID= 2 AND ID_Candidate IS NULL";
+$notara2 = "SELECT AREA_ID FROM score WHERE AREA_ID= 2 AND ID_Candidate IS NULL";
 $notara2 = mysqli_query($con, $notara2);
 $notara2 = mysqli_num_rows($notara2);
 
 
-$notara3 = "SELECT ID FROM score WHERE ID= 3 AND ID_Candidate IS NULL";
+$notara3 = "SELECT AREA_ID FROM score WHERE AREA_ID= 3 AND ID_Candidate IS NULL";
 $notara3 = mysqli_query($con, $notara3);
 $notara3 = mysqli_num_rows($notara3);
 
-$notareaall = "SELECT ID FROM score WHERE ID_Candidate IS NULL";
+$notareaall = "SELECT AREA_ID FROM score WHERE ID_Candidate IS NULL";
 $notareaall = mysqli_query($con, $notareaall);
 $notareaall = mysqli_num_rows($notareaall);
 
-$allPointone = "SELECT ID FROM score WHERE ID = 1 AND ID_Candidate IS NOT NULL";
+$allPointone = "SELECT AREA_ID FROM score WHERE AREA_ID = 1 AND ID_Candidate IS NOT NULL";
 $allPointone = mysqli_query($con, $allPointone);
 $allPointone = mysqli_num_rows($allPointone);
 
-$allPoint2 = "SELECT ID FROM score WHERE ID = 2 AND ID_Candidate IS NOT NULL";
+$allPoint2 = "SELECT AREA_ID FROM score WHERE AREA_ID = 2 AND ID_Candidate IS NOT NULL";
 $allPoint2 = mysqli_query($con, $allPoint2);
 $allPoint2 = mysqli_num_rows($allPoint2);
 
-$allPoint3 = "SELECT ID FROM score WHERE ID = 3 AND ID_Candidate IS NOT NULL";
+$allPoint3 = "SELECT AREA_ID FROM score WHERE AREA_ID = 3 AND ID_Candidate IS NOT NULL";
 $allPoint3 = mysqli_query($con, $allPoint3);
 $allPoint3 = mysqli_num_rows($allPoint3);
 

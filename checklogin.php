@@ -30,7 +30,7 @@ if(mysqli_num_rows($result) == 1){
   $_SESSION['IDCard'] = $row['IDCard'];
   $_SESSION['Register'] = $row['Register'];
   $_SESSION['Password'] = $row['Password'];
-  $_SESSION['ID'] = $row['ID'];
+  $_SESSION['ID'] = $row['AREA_ID'];
   $_SESSION['status'] = $row['stauts'];
   $_SESSION['Status_scored'] = $row['Status_scored'];
     header("Location:vote.php");

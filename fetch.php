@@ -21,7 +21,7 @@ if(isset($_POST["check"]))
     if(is_numeric($_POST["check"])){
         //ลงคะแนนตามปกติ
         $id = $_POST["check"];
-        $sql = "INSERT INTO score (ID,ID_Candidate) VALUES ('$area', '$id')";
+        $sql = "INSERT INTO score (AREA_ID,ID_Candidate) VALUES ('$area', '$id')";
         $update = "UPDATE user SET Status_scored = '1' WHERE user.IDCard = '$IDCard'";
         mysqli_query($con,$sql);
         mysqli_query($con,$update);
@@ -31,7 +31,7 @@ if(isset($_POST["check"]))
     }else{
         //กรณีไม่ประสงค์ลงคะเเนน
         //$area="";// $area = SESSION_['ID'];
-        $sql = "INSERT INTO score (ID) VALUES ('$area')";
+        $sql = "INSERT INTO score (AREA_ID) VALUES ('$area')";
         mysqli_query($con,$sql);
         $update = "UPDATE user SET Status_scored = '1' WHERE user.IDCard = '$IDCard'";
         mysqli_query($con,$update);

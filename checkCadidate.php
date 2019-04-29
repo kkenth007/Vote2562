@@ -3,13 +3,13 @@ session_start();
 
 include "./include/config.php";
 
-$data = "SELECT * FROM `applicant` WHERE ID = 1";
+$data = "SELECT * FROM `applicant` WHERE AREA_ID = 1";
 $result = mysqli_query($con, $data);
 
-$data = "SELECT * FROM `applicant` WHERE ID = 2";
+$data = "SELECT * FROM `applicant` WHERE AREA_ID = 2";
 $result1 = mysqli_query($con, $data);
 
-$data = "SELECT * FROM `applicant` WHERE ID = 3";
+$data = "SELECT * FROM `applicant` WHERE AREA_ID = 3";
 $result2 = mysqli_query($con, $data);
 
 
@@ -50,7 +50,7 @@ $result2 = mysqli_query($con, $data);
                   <p class="card-text"><?php echo $row['Name_applicant'] ?></p>
                 </div>
                 <div class="card-footer">
-                  <small class="text-muted"><?php echo $row['Candidate_name'] ?>?</small>
+                  <small class="text-muted"><?php echo $row['Candidate_name'] ?></small>
                 </div>
               </div>
             <?php } ?>
@@ -98,7 +98,7 @@ $result2 = mysqli_query($con, $data);
                   <p class="card-text"><?php echo $row['Name_applicant'] ?></p>
                 </div>
                 <div class="card-footer">
-                  <small class="text-muted"><?php echo $row['Candidate_name'] ?>?</small>
+                  <small class="text-muted"><?php echo $row['Candidate_name'] ?></small>
                 </div>
               </div>
             <?php } ?>

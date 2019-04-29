@@ -9,7 +9,7 @@ $Status = $_POST['Status'];
 $ID = $_POST['ID'];
 
 
-$sqlInsert = "INSERT INTO user(Fullname, IDCard, Register, Password, Status, ID )
+$sqlInsert = "INSERT INTO user(Fullname, IDCard, Register, Password, Status, AREA_ID )
 VALUES ('$Fullname','$IDCard','$Register','$Password','$Status','$ID')";
 // query() เป็นฟังก์ชั่นที่ทำการ execute คำสั่ง sql
 $conn->query($sqlInsert);

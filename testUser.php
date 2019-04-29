@@ -2,7 +2,7 @@
 session_start();
 include "./include/config.php";
 $id = $_POST['number'];
-$data = "SELECT * FROM user INNER JOIN area ON user.ID = area.ID  Where IDCard='$id'";
+$data = "SELECT * FROM user INNER JOIN area ON user.AREA_ID = area.AREA_ID  Where IDCard='$id'";
 
 $result = mysqli_query($con, $data);
 if (mysqli_num_rows($result) == 1) {
@@ -10,7 +10,7 @@ if (mysqli_num_rows($result) == 1) {
     $row = mysqli_fetch_array($result);
     $fullname = $row['Fullname'];
     $idcard = $row['IDCard'];
-    $area = $row['ID'];
+    $area = $row['AREA_ID'];
     $province = $row['province'];
     if ($row['Status'] == '1') {
         $owner = "คุณมีสิทธิ์เลือกตั้ง ";
